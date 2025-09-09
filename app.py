@@ -15,11 +15,12 @@ def index():
     cf = fetch_conversion_factor(source_currency,target_currency)
     final_amount = amount * cf
     final_amount = round(final_amount,2)
+    #response part
     response = {
         'fulfillmentText':"{} {} is {} {}".format(amount,source_currency,final_amount,target_currency)
     }
     return jsonify(response)
-
+#api fetching code
 def fetch_conversion_factor(source,target):
     url = "https://free.currconv.com/api/v7/convert?q={}_{}&compact=ultra&apiKey=[15c95acde73636f75e26]".format(source,target)
 
@@ -28,6 +29,7 @@ def fetch_conversion_factor(source,target):
 
     return response['{}_{}'.format(source,target)]
 
-
+#execution and debug
 if __name__ == "__main__":
     app.run(debug=True)
+
