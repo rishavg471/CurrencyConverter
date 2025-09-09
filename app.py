@@ -30,6 +30,12 @@ def fetch_conversion_factor(source,target):
     return response['{}_{}'.format(source,target)]
 
 #execution and debug
+'''
 if __name__ == "__main__":
     app.run(debug=True)
+'''
+if __name__ == "__main__":
+    # production-safe way
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
+
 
