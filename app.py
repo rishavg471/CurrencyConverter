@@ -37,7 +37,8 @@ if __name__ == "__main__":
 '''
 if __name__ == "__main__":
     # production-safe way
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5055)), debug=False)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5555)), debug=False)
+
 
 
 
